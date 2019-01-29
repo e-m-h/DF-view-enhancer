@@ -20,7 +20,7 @@ import shutil
 def makeBackup():
 	shutil.copyfile('SAVETREE.DAT','SAVETREE.BKP')
 
-def changeDistance():
+def distanceChange():
 	with open('SAVETREE.DAT', 'rb') as f, open('newsavetree', 'wb') as fout:
 		hexdata = binascii.hexlify(f.read())
 		stuff = (hexdata.decode())
@@ -43,8 +43,15 @@ if sel == '1':
 	dis = '9f7f0080'
 elif sel == '2': 
 	dis = 'cf7f0080'
-
+elif sel == '3':
+    dis = 'd77f0080'
+elif sel == '4':
+    dis = 'df7f0080'
+elif sel == '5':
+    dis = 'ef7f0080'
+elif sel == '6':
+    dis = 'ff7f0080'
 
 
 #print(dis)
-changeDistance()
+distanceChange()
